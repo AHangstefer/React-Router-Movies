@@ -39,8 +39,8 @@ const App = () => {
            </div>   */}
            <Link to ="/Movie/0">Movie0</Link>
        <Switch>
-        <Route path="/Movie/:id"> component = {Movie} </Route> 
-        <Route path="/"> component = {MovieList}</Route>
+        <Route path="/Movie/:blue" component = {Movie}></Route> 
+        <Route path="/"><MovieList movies = {movieList}/></Route>
        </Switch> 
       
     </div>

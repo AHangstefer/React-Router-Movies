@@ -14,7 +14,7 @@ const MovieList = props => {
 
 function MovieDetails({ movie }) {
   return(
-    <Link to ={`/Movies/${movie.id}`}><MovieCard movie={movie}
+    <Link to ={`/Movie/${movie.id}`}><MovieCard movie={movie}
      
     /></Link>
   )
