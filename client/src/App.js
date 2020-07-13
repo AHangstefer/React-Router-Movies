@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect} from 'react';
 import axios from 'axios';
-import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Link, Switch, useHistory} from 'react-router-dom';
 import SavedList from './Movies/SavedList';
 import MovieList from './Movies/MovieList';
 import Movie from './Movies/Movie';
@@ -27,6 +27,8 @@ const App = () => {
     setSavedList([...savedList, movie]);
   };
 
+  const {push} = useHistory();
+
   return (
     <div>
       <SavedList list={savedList} />
@@ -37,7 +39,9 @@ const App = () => {
          (ex: /movies/2, /movies/3 where the id is dynamic). 
          This route should load the Movie component. 
            </div>   */}
-           <Link to ="/Movie/0">Movie0</Link>
+           
+           <button onClick ={() => push("/")}> Back </button>
+          
        <Switch>
         <Route path="/Movie/:blue" component = {Movie}></Route> 
         <Route path="/"><MovieList movies = {movieList}/></Route>
